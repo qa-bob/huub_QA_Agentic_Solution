@@ -1,3 +1,10 @@
+---
+name: site-analyzer
+description: Crawls a live website and produces a fully populated site.config.json for the Playwright regression framework. Use when onboarding a new site, verifying an existing config after a redesign, or when the /analyze-site command runs.
+tools: WebFetch, Read, Write, Bash, Grep, Glob
+model: sonnet
+---
+
 # Agent: site-analyzer
 
 ## Role

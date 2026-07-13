@@ -10,10 +10,12 @@
  */
 
 import { test as base, expect } from '@playwright/test';
-import { loadSiteConfig, type SiteConfig } from '@types/site-config.types';
+import { loadSiteConfig, type SiteConfig } from '@app-types/site-config.types';
 import { HomePage } from '@pages/home.page';
 import { NavigationPage } from '@pages/navigation.page';
 import { ContactFormPage } from '@pages/contact.page';
+import { ProductPage } from '@pages/product.page';
+import { ResourcesPage } from '@pages/resources.page';
 
 // ── Fixture type definitions ─────────────────────────────────────────────────
 
@@ -26,6 +28,10 @@ export interface Fixtures {
   navigationPage: NavigationPage;
   /** ContactFormPage page object (does not auto-navigate) */
   contactPage: ContactFormPage;
+  /** ProductPage page object (does not auto-navigate; call navigateTo(path)) */
+  productPage: ProductPage;
+  /** ResourcesPage page object (does not auto-navigate; call navigateTo(path)) */
+  resourcesPage: ResourcesPage;
 }
 
 // ── Extended test object ─────────────────────────────────────────────────────
@@ -66,6 +72,26 @@ export const test = base.extend<Fixtures>({
   contactPage: async ({ page, siteConfig }, use) => {
     const contactPage = new ContactFormPage(page, siteConfig);
     await use(contactPage);
+  },
+
+  /**
+   * productPage — constructs ProductPage without navigating.
+   * Tests should call productPage.navigateTo(path) for the marketing page
+   * under test (e.g. "/economic-engagement-suite").
+   */
+  productPage: async ({ page, siteConfig }, use) => {
+    const productPage = new ProductPage(page, siteConfig);
+    await use(productPage);
+  },
+
+  /**
+   * resourcesPage — constructs ResourcesPage without navigating.
+   * Tests should call resourcesPage.navigateTo(path) for the listing under
+   * test (e.g. "/resources" or "/articles").
+   */
+  resourcesPage: async ({ page, siteConfig }, use) => {
+    const resourcesPage = new ResourcesPage(page, siteConfig);
+    await use(resourcesPage);
   },
 });
 

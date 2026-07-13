@@ -1,6 +1,29 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+
+# Playwright artifacts
 playwright-report/
 test-results/
-__snapshots__/
+blob-report/
+playwright/.cache/
+
+# Visual regression diffs (baselines under __snapshots__ ARE committed)
+**/*-actual.png
+**/*-diff.png
+
+# Environment / secrets
 .env
+.env.local
+
+# Claude Code — personal, machine-local config (never commit)
+.claude/settings.local.json
+CLAUDE.local.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

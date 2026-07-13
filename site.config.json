@@ -1,23 +1,27 @@
-﻿{
-    "name":  "Huub",
-    "url":  "https://www.joinhuub.com",
-    "description":  "",
-    "industry":  "",
-    "hasContactForm":  true,
-    "expectedNavItems":  [
-
-                         ],
-    "viewports":  [
-                      "desktop",
-                      "mobile",
-                      "tablet"
-                  ],
-    "skipVisual":  false,
-    "skipForms":  false,
-    "auth":  {
-                 "required":  false,
-                 "loginUrl":  "",
-                 "username":  "",
-                 "password":  ""
-             }
+{
+  "name": "Huub",
+  "url": "https://www.joinhuub.com",
+  "description": "Economic development software that helps cities, chambers, and economic development organizations deliver, track, and report small-business support.",
+  "industry": "B2G / B2B SaaS — Economic Development",
+  "hasContactForm": true,
+  "expectedNavItems": [
+    "Solutions",
+    "Customer Stories",
+    "Resources",
+    "About",
+    "Contact"
+  ],
+  "viewports": [
+    "desktop",
+    "mobile",
+    "tablet"
+  ],
+  "skipVisual": false,
+  "skipForms": false,
+  "auth": {
+    "required": false,
+    "loginUrl": "",
+    "username": "",
+    "password": ""
+  }
 }
