@@ -82,7 +82,7 @@ test.describe('Newsletter Subscribe @functional', () => {
     await expect(footerEmail, 'Newsletter email field should be visible').toBeVisible();
 
     // Let any late JS settle without a fixed timeout.
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
 
     expect(
       submitted,
