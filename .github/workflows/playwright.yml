@@ -2,14 +2,9 @@ name: Playwright Tests
 
 # Regression gate: run the full suite on every push and PR to main,
 # plus a daily scheduled run to catch drift on the live site.
+# Manual only: the QA workflow (qa.yml) now runs smoke tests on push/PR and the scheduled suites.
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: "0 7 * * *" # 07:00 UTC daily
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 jobs:
   test:
