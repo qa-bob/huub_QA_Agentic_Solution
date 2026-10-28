@@ -30,7 +30,7 @@ test.describe('Pricing Access Gate @functional', () => {
   test('pricing page is access-gated by a password prompt @functional', async ({ page, siteConfig }) => {
     const pricingUrl = siteConfig.url.replace(/\/$/, '') + PRICING_PATH;
     await page.goto(pricingUrl, { waitUntil: 'domcontentloaded' });
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('load');
 
     // A password input is the clearest signal of the Squarespace lock screen.
     const passwordInput = page.locator('input[type="password"]');
